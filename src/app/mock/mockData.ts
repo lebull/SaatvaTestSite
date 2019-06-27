@@ -1,4 +1,4 @@
-{
+export const MockData:any = {
     "articles": [
         {
             "author": "Kenny Kline",
