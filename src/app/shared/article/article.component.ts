@@ -10,13 +10,10 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class ArticleComponent implements OnInit {
 
   public article:any = MockData.articles[0];
-  public description:SafeHtml = "";
+  public description = MockData.articles[0].long_description;
 
   constructor(
-    public sanitizer: DomSanitizer
-  ) {
-    this.description = this.sanitizer.bypassSecurityTrustHtml(MockData.articles[0].long_description);
-  }
+  ) {}
 
   ngOnInit() {
   }
