@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleComponent } from './article/article.component';
 import { ArticleListComponent } from './article-list/article-list.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { ArticleListComponent } from './article-list/article-list.component';
     ArticleListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule,
   ],
   exports:[
     ArticleComponent,

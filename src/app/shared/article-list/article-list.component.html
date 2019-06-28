@@ -1,5 +1,5 @@
 <nav>
-  <a *ngFor="let article of articles" >
+  <a *ngFor="let article of articles" [routerLink]="['/article', 1]" >
     <div class="imgWrap">
       <img [src]="article.urlToImage" />
     </div>
