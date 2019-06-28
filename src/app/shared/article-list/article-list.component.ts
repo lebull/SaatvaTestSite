@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MockData } from 'src/app/mock/mockData';
+import { ArticleAdapter, Article } from 'src/app/core/models/article';
 
 @Component({
   selector: 'app-article-list',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleListComponent implements OnInit {
 
-  constructor() { }
+  public articles: Article[] = MockData.articles.map(article=> new ArticleAdapter().decode(article));
+
+  constructor() {
+
+   }
 
   ngOnInit() {
   }

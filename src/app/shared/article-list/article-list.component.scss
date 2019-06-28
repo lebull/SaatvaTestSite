@@ -1,0 +1,15 @@
+$imagewidth: 200px;
+
+nav{
+    display: flex;
+    flex-direction: column;
+}
+
+.imgWrap{
+    flex-grow: 1;
+    width: $imagewidth;
+}
+
+nav img {
+    max-width: $imagewidth;
+}
