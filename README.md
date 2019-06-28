@@ -9,6 +9,15 @@
 
 * None... it's barebone right now.
 
+#ToDo
+
+* State Management
+* Routing
+* Remote Call With Testing
+* Styling
+* Animations
+* Get rid of explicite subscription for the article list
+
 # Installation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
