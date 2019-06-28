@@ -1,5 +1,16 @@
 # SaatvaTestSite
 
+## Tooling Decisions
+
+* Angular
+* Adapter pattern
+
+## UI Design Decisions
+
+* None... it's barebone right now.
+
+# Installation
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
 ## Development server
