@@ -12,8 +12,10 @@ import { ArticleService } from 'src/app/core/services/article.service';
 export class ArticleViewerComponent implements OnInit {
 
   public articles$: Observable<Article[]>;
+
   public articles: Article[];
-  public currentArticle: string
+  public currentArticleUrl: string
+  public currentArticle: Article;
 
   constructor(
     public route: ActivatedRoute,
@@ -21,13 +23,31 @@ export class ArticleViewerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => this.currentArticle = params.id);
+    this.route.params.subscribe(params => {
+      this.updateCurrentArticle(params.id);
+    });
 
     this.articleService.getArticles().subscribe(
-      result => this.articles = result
+      result => {
+        this.articles = result;
+        this.updateCurrentArticle(this.currentArticleUrl);
+      }
     );
 
     this.articleService.fetchArticles();
+  }
+
+  //TODO: Test
+  public updateCurrentArticle(url){
+
+    if(!this.articles){
+      return;
+    }
+
+    this.currentArticle = this.articles.find(
+      article => article.url === url
+    )
+
   }
 
 }
