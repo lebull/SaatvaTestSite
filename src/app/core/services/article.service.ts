@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Article, ArticleAdapter } from '../models/article';
 import { MockData } from 'src/app/mock/mockData';
+import { HttpClient } from  "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,9 @@ export class ArticleService {
 
   articles$: Subject<Article[]> = new Subject<Article[]>();
 
-  constructor() {}
+  constructor(
+    public http: HttpClient
+  ) {}
 
   /**
    * Returns an observable of an array of articles
@@ -23,8 +27,15 @@ export class ArticleService {
   }
 
   public fetchArticles(){
-    this.articles$.next(MockData.articles.map(
-      article => this.articleAdapter.decode(article)
-    ));
+
+    this.http.get('https://s3-us-west-2.amazonaws.com/saatva-hiring/news.json').pipe(
+      tap( (result:any) =>     
+        this.articles$.next(result.articles.map(
+          article => this.articleAdapter.decode(article)
+        ))
+      )
+    ).subscribe();  
+
+
   }
 }
