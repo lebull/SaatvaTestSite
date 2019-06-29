@@ -1,12 +1,16 @@
-.article{
-    font-family: "Pragati Narrow", sans-serif;
-}
 
 .articleWrapper{
     padding: 20px;
     display: flex;
 }
 
+.article{
+    font-family: "Pragati Narrow", sans-serif;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+
+}
 .articleWrapper img {
     object-fit: contain;
     max-width: 100%;

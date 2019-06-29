@@ -1,13 +1,10 @@
 <div class="articleWrapper" *ngIf="article else error">
   <div class="article">
       <h1 [innerHtml]="article.title"></h1>
-      <img [src]="article.urlToImage"/>
-      <ul>
-        <li>{{ article.author }}</li>
-        <li>{{ article.publishedAt }}</li>
-        <li><a [href]="article.url">Original Article</a></li>
-      </ul>
+      <h3>{{ article.author }} - {{ article.publishedAt }}</h3>
+      <img class="artileImage" [src]="article.urlToImage"/>
       <div [innerHtml]="article.long_description"></div>
+      <p><a [href]="article.url">Original Article</a></p>
   </div>
 </div>
 
