@@ -1,8 +1,12 @@
 <nav>
-  <a *ngFor="let article of articles" [routerLink]="['/article', article.url]" >
-    <div class="imgWrap">
+  <a  *ngFor="let article of articles" 
+      [routerLink]="['/article', article.url]" 
+      (ngStyle)="getBackgroundStyle(article)"
+  >
+    <!-- <div class="imgWrap">
       <img [src]="article.urlToImage" />
-    </div>
+    </div> -->
     <span>{{article.title}}</span>
   </a>
+
 </nav>
