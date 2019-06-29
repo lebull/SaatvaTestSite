@@ -9,9 +9,8 @@ import { HttpClient } from  "@angular/common/http";
   providedIn: 'root'
 })
 export class ArticleService {
-
+  //REVIEW:  Shouldn't we be injecting this?
   public articleAdapter = new ArticleAdapter();
-
 
   articles$: Subject<Article[]> = new Subject<Article[]>();
 

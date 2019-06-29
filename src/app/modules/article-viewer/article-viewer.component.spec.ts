@@ -28,4 +28,10 @@ describe('ArticleViewerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should toogle the sidenav', ()=>{
+    expect(component.sidenavOpen).toBe(false);
+    component.toggleSidenav();
+    expect(component.sidenavOpen).toBe(true);
+  })
 });
