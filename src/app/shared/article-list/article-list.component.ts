@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MockData } from 'src/app/mock/mockData';
-import { ArticleAdapter, Article } from 'src/app/core/models/article';
+import { Article } from 'src/app/core/models/article';
 import { ArticleService } from 'src/app/core/services/article.service';
-import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-article-list',
@@ -13,7 +11,8 @@ export class ArticleListComponent implements OnInit {
 
   @Input() articles: Article[];
   @Input() selectedArticleUrl: string;
-
+  @Input() opened: boolean;
+  
   constructor(
     public articleService: ArticleService,
   ) {
@@ -32,16 +31,18 @@ export class ArticleListComponent implements OnInit {
       //https://css-tricks.com/tinted-images-multiple-backgrounds/
       //This needs to get refactored, ideally to boot it out of the controller.
       conditionalStyle = {
-        'background-image': ` linear-gradient(
-                                rgba(0, 0, 0, 0.45), 
-                                rgba(0, 0, 0, 0.45)
-                              ),
-                              url('${article.urlToImage}')`,
+        'background-image': 
+          ` linear-gradient(
+              rgba(63, 63, 63, 0.6), 
+              rgba(63, 63, 63, 0.6)
+            ),
+            url('${article.urlToImage}')`,
       };
     }
 
     return conditionalStyle;
-
   }
+
+
 
 }

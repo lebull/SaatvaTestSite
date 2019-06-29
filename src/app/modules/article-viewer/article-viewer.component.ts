@@ -18,6 +18,8 @@ export class ArticleViewerComponent implements OnInit {
   public currentArticle: Article;
   public articleActive: boolean;
 
+  public sidenavOpen: boolean = false;
+
   constructor(
     public route: ActivatedRoute,
     public articleService: ArticleService,
@@ -57,6 +59,10 @@ export class ArticleViewerComponent implements OnInit {
     this.currentArticle = this.articles.find(
       article => article.url === this.selectedArticleUrl
     )
+  }
+
+  public toggleSidenav(){
+    this.sidenavOpen = !this.sidenavOpen;
   }
 
 }

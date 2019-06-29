@@ -1,4 +1,7 @@
 <div class="wrapper">
-    <app-article-list class="master" [articles]="articles" [selectedArticleUrl]="selectedArticleUrl"></app-article-list>
-    <app-article class="detail" [article]="currentArticle" *ngIf="articleActive"></app-article>
+    <app-article-list class="master" [opened]="sidenavOpen" [articles]="articles" [selectedArticleUrl]="selectedArticleUrl"></app-article-list>
+    <section>
+        <i (click)="toggleSidenav()" class="fas fa-bars"></i>
+        <app-article class="detail" [article]="currentArticle" *ngIf="articleActive"></app-article>
+    </section>
 </div>

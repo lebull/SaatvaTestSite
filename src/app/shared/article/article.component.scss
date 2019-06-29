@@ -1,17 +1,23 @@
+@import '../../..//styles.scss';
+
 
 .articleWrapper{
-    padding: 20px;
     display: flex;
 }
-
 .article{
+    padding: 20px;
     font-family: "Pragati Narrow", sans-serif;
     display: flex;
     flex-direction: column;
     max-width: 600px;
-
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
 .articleWrapper img {
     object-fit: contain;
     max-width: 100%;
+}
+
+h3{
+    text-align: end;
 }
