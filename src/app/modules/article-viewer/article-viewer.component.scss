@@ -4,9 +4,10 @@
 }
 
 .app-article-list{
-    flex-grow: 1;
+    min-width: 400px;
+    width: 20%;
 }
 
 .app-article{
-    flex-grow: 4;
+    width: 80%;
 }
