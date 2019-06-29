@@ -18,6 +18,11 @@
 * Animations
 * Get rid of explicite subscription for the article list
 
+# Questions
+
+* What do we need to do about images that don't fit the list link.
+
+
 # Installation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
