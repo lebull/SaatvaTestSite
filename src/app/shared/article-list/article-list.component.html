@@ -1,8 +1,9 @@
-<nav>
+<nav [ngClass]="{'closed': !opened}">
   <a  *ngFor="let article of articles" 
       [routerLink]="['/article', article.url]" 
       [ngStyle]="getBackgroundStyle(article)"
-      [ngClass]="article.url === selectedArticleUrl ? 'currentLink' : ''"
+      [ngClass]="{'currentLink': (article.url === selectedArticleUrl)}"
+      
   >
     <!-- <div class="imgWrap">
       <img [src]="article.urlToImage" />

@@ -13,6 +13,12 @@ nav{
     overflow: hidden;
 }
 
+
+.closed{
+    width: 0;
+}
+
+
 a{
     width: $masterWidth - $masterPadding*2;
     padding: 50px;

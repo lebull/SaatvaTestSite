@@ -6,12 +6,14 @@
 }
 .article{
     padding: 20px;
+    // margin: 20px;
+
     font-family: "Pragati Narrow", sans-serif;
     display: flex;
     flex-direction: column;
     max-width: 600px;
     background-color: #FFF;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    // box-shadow: 0px 0px 10px rgba(46, 44, 44, 0.2);
 }
 .articleWrapper img {
     object-fit: contain;
