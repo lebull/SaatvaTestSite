@@ -1,21 +1,12 @@
-$imagewidth: 200px;
-
 nav{
     display: flex;
     flex-direction: column;
-    font-family: "Questrial", sans-serif,
-}
-
-.imgWrap{
-    flex-grow: 1;
-    width: $imagewidth;
-}
-
-nav img {
-    max-width: $imagewidth;
+    font-family: "Questrial", sans-serif;
+    min-width: 200px;
+    width: 20%;
 }
 
 a{
     padding: 20px;
-    border-bottom: solid 2px #000;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
 }
