@@ -20,25 +20,31 @@ export class ArticleViewerComponent implements OnInit {
   constructor(
     public route: ActivatedRoute,
     public articleService: ArticleService,
-  ) { }
-
-  ngOnInit() {
+  ) { 
+  
     this.route.params.subscribe(params => {
-      this.updateCurrentArticle(params.id);
+      this.currentArticleUrl = params.id;
+      this.updateCurrentArticle();
     });
 
     this.articleService.getArticles().subscribe(
       result => {
         this.articles = result;
-        this.updateCurrentArticle(this.currentArticleUrl);
+        this.updateCurrentArticle();
       }
     );
+  }
+
+  ngOnInit() {
+
 
     this.articleService.fetchArticles();
   }
 
   //TODO: Test
-  public updateCurrentArticle(url){
+  public updateCurrentArticle(){
+
+    let url = this.currentArticleUrl;
 
     if(!this.articles){
       return;
@@ -47,6 +53,7 @@ export class ArticleViewerComponent implements OnInit {
     this.currentArticle = this.articles.find(
       article => article.url === url
     )
+
 
   }
 
