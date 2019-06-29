@@ -2,3 +2,11 @@
     display: flex;
     flex-direction: row;
 }
+
+.app-article-list{
+    flex-grow: 1;
+}
+
+.app-article{
+    flex-grow: 4;
+}

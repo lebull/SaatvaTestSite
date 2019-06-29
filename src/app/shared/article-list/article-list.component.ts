@@ -23,7 +23,6 @@ export class ArticleListComponent implements OnInit {
   }
 
   public getBackgroundStyle(article: Article){
-    debugger;
     return {
       'background-image': `url('${article.urlToImage}')`
     };
