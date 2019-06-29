@@ -9,4 +9,5 @@ html, body {
 
 $masterWidth: 400px;
 $masterPadding: 50px;
-$mobileCutoff: 800px;
+$articleWidth: 600px;
+$mobileCutoff: $masterWidth + $articleWidth;

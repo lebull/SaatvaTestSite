@@ -5,8 +5,14 @@
     font-family: "Pragati Narrow", sans-serif;
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    max-width: $articleWidth;
     background-color: #FFF;
+
+
+    //@media only screen and (max-width: $mobileCutoff) {
+        margin: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    //}
 }
 .articleWrapper img {
     object-fit: contain;
