@@ -1,7 +1,7 @@
 <div class="wrapper">
     <app-article-list class="master" [opened]="sidenavOpen" [articles]="articles" [selectedArticleUrl]="selectedArticleUrl"></app-article-list>
     <section class="detailWrapper">
-        <div>
+        <div class="toolbar">
             <i (click)="toggleSidenav()" class="fas fa-bars"></i>
         </div>
         <app-article class="detail" [article]="currentArticle" *ngIf="articleActive"></app-article>

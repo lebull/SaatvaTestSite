@@ -10,12 +10,6 @@ import { ArticleAdapter, Article } from 'src/app/core/models/article';
 export class ArticleComponent implements OnInit {
 
   @Input() article:Article;
-
-  constructor(
-  ) {}
-
-  ngOnInit() {
-
-  }
-
+  constructor() {}
+  ngOnInit() {}
 }

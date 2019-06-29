@@ -1,12 +1,11 @@
 <div class="articleWrapper" *ngIf="article else error">
   <div class="article">
       <h1 [innerHtml]="article.title"></h1>
-      <img class="artileImage" [src]="article.urlToImage"/>
+      <img class="artileImage" [src]="article.urlToImage" alt="article-image"/>
       <div [innerHtml]="article.long_description"></div>
       <p>
         <a [href]="article.url">{{ article.author }} - {{ article.publishedAt }}</a>
       </p>
-      
   </div>
 </div>
 

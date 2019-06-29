@@ -22,6 +22,7 @@ export class ArticleListComponent implements OnInit {
 
   }
 
+  //REVIEW:  I guess it makes sense to use the router to pick active links, but this isn't so bad.
   public getBackgroundStyle(article: Article){
 
     let conditionalStyle = {}

@@ -2,11 +2,11 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #fefeff;
+    background-color: #f8f9f8;
     color: #666;
     font-size: 18pt;
 }
 
 $masterWidth: 400px;
 $masterPadding: 50px;
-
+$mobileCutoff: 800px;
