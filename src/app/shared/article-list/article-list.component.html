@@ -2,6 +2,7 @@
   <a  *ngFor="let article of articles" 
       [routerLink]="['/article', article.url]" 
       [ngStyle]="getBackgroundStyle(article)"
+      [ngClass]="article.url === selectedArticleUrl ? 'currentLink' : ''"
   >
     <!-- <div class="imgWrap">
       <img [src]="article.urlToImage" />

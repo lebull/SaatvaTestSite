@@ -14,7 +14,7 @@ export class ArticleViewerComponent implements OnInit {
   public articles$: Observable<Article[]>;
 
   public articles: Article[];
-  public currentArticleUrl: string
+  public selectedArticleUrl: string
   public currentArticle: Article;
   public articleActive: boolean;
 
@@ -33,7 +33,7 @@ export class ArticleViewerComponent implements OnInit {
       this.articleActive = (params.id !== undefined);
 
       //Curent article id
-      this.currentArticleUrl = params.id;
+      this.selectedArticleUrl = params.id;
 
       this.updateCurrentArticle();
     });
@@ -55,7 +55,7 @@ export class ArticleViewerComponent implements OnInit {
     if(!this.articles){ return; }
 
     this.currentArticle = this.articles.find(
-      article => article.url === this.currentArticleUrl
+      article => article.url === this.selectedArticleUrl
     )
   }
 

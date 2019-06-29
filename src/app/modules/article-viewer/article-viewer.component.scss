@@ -3,11 +3,14 @@
     flex-direction: row;
 }
 
-.app-article-list{
+.master{
     min-width: 400px;
-    width: 20%;
+    display: flex;
+    flex-grow: 1;
 }
 
-.app-article{
-    width: 80%;
+.detail{
+    display: flex;
+    flex-grow: 5;
+    justify-content: center;
 }

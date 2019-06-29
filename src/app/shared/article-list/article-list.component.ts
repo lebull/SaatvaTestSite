@@ -12,6 +12,7 @@ import { Observable, Subject } from 'rxjs';
 export class ArticleListComponent implements OnInit {
 
   @Input() articles: Article[];
+  @Input() selectedArticleUrl: string;
 
   constructor(
     public articleService: ArticleService,
@@ -23,9 +24,24 @@ export class ArticleListComponent implements OnInit {
   }
 
   public getBackgroundStyle(article: Article){
-    return {
-      'background-image': `url('${article.urlToImage}')`
-    };
+
+    let conditionalStyle = {}
+
+    if(this.selectedArticleUrl === article.url){
+
+      //https://css-tricks.com/tinted-images-multiple-backgrounds/
+      //This needs to get refactored, ideally to boot it out of the controller.
+      conditionalStyle = {
+        'background-image': ` linear-gradient(
+                                rgba(0, 0, 0, 0.45), 
+                                rgba(0, 0, 0, 0.45)
+                              ),
+                              url('${article.urlToImage}')`,
+      };
+    }
+
+    return conditionalStyle;
+
   }
 
 }

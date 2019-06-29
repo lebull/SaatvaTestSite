@@ -1,4 +1,4 @@
 <div class="wrapper">
-    <app-article-list [articles]="articles"></app-article-list>
-    <app-article [article]="currentArticle" *ngIf="articleActive"></app-article>
+    <app-article-list class="master" [articles]="articles" [selectedArticleUrl]="selectedArticleUrl"></app-article-list>
+    <app-article class="detail" [article]="currentArticle" *ngIf="articleActive"></app-article>
 </div>
