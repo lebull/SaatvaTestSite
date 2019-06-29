@@ -36,25 +36,18 @@ export class ArticleViewerComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
     this.articleService.fetchArticles();
   }
 
   //TODO: Test
   public updateCurrentArticle(){
 
-    let url = this.currentArticleUrl;
-
-    if(!this.articles){
-      return;
-    }
+    //We can't do anything if we don't have our articles yet.
+    if(!this.articles){ return; }
 
     this.currentArticle = this.articles.find(
-      article => article.url === url
+      article => article.url === this.currentArticleUrl
     )
-
-
   }
 
 }
