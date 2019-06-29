@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ArticleViewerComponent } from './article-viewer.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ArticleViewerComponent', () => {
   let component: ArticleViewerComponent;
@@ -8,7 +10,11 @@ describe('ArticleViewerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArticleViewerComponent ]
+      declarations: [ ArticleViewerComponent ],
+      imports: [
+        SharedModule,
+        HttpClientTestingModule, //REVIEW: We shouldn't need this.
+      ]
     })
     .compileComponents();
   }));
