@@ -1,31 +1,20 @@
-# SaatvaTestSite
-
-## Tooling Decisions
-
-* Angular
-* Adapter pattern
-
-## UI Design Decisions
-
-* None... it's barebone right now.
-
-# ToDo
-
-* State Management
-* Routing
-* Remote Call With Testing
-* Styling
-* Animations
-* Get rid of explicite subscription for the article list
-
-# Questions
-
-* What do we need to do about images that don't fit the list link.
-
-
 # Installation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+
+### 1. Install node.js
+
+> [https://nodejs.org](https://nodejs.org)
+
+### 2. Clone this Repository  
+
+### 3. Install angular cli
+
+> npm install -g @angular/cli
+
+### 4. Install Dependencies
+> cd ../project
+> npm install
 
 ## Development server
 
@@ -35,17 +24,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Build
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Further help
 
