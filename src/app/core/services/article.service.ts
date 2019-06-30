@@ -15,7 +15,7 @@ export class ArticleService {
   articles$: Subject<Article[]> = new Subject<Article[]>();
 
   constructor(
-    public http: HttpClient
+    public http: HttpClient,
   ) {}
 
   /**

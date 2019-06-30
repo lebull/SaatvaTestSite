@@ -4,6 +4,7 @@ import { ArticleListComponent } from './article-list.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Article } from 'src/app/core/models/article';
+import { mockArticle } from 'src/app/mock/mockArticles';
 
 describe('ArticleListComponent', () => {
   let component: ArticleListComponent;
@@ -31,14 +32,8 @@ describe('ArticleListComponent', () => {
   });
 
   it('should return a background style for all links', ()=>{
-    
-    let dummyArticle = new Article("author", "title", "description", "long_description", "url", "urlToImage", new Date())
-
-    // component.selectedArticleUrl = null;
-    // expect(Object.keys(component.getBackgroundStyle(dummyArticle)).length).toBe(0)
-
     component.selectedArticleUrl = "url";
-    expect(Object.keys(component.getBackgroundStyle(dummyArticle)).length).toBeGreaterThan(0);
-    expect(component.getBackgroundStyle(dummyArticle)['background-image']).toBeTruthy();
+    expect(Object.keys(component.getBackgroundStyle(mockArticle)).length).toBeGreaterThan(0);
+    expect(component.getBackgroundStyle(mockArticle)['background-image']).toBeTruthy();
   });
 });

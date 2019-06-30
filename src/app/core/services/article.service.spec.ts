@@ -6,6 +6,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Article } from '../models/article';
+import { mockArticle } from 'src/app/mock/mockArticles';
 
 describe('ArticlesService', () => {
 
@@ -38,13 +39,12 @@ describe('ArticlesService', () => {
 
     let returnSubject = new Subject<any>();
     let callReturn = {articles: ["dummy"]};
-    let dummyArticle = new Article("author", "title", "description", "long_description", "url", "urlToImage", new Date())
 
     let callSpy = spyOn(service.http, 'get').and.returnValue(returnSubject);
-    let adaptSpy = spyOn(service.articleAdapter, 'decode').and.returnValue(dummyArticle);
+    let adaptSpy = spyOn(service.articleAdapter, 'decode').and.returnValue(mockArticle);
 
     service.getArticles().subscribe(actualReturn => {
-      expect(actualReturn[0]).toBe(dummyArticle); 
+      expect(actualReturn[0]).toBe(mockArticle); 
     });
 
     service.fetchArticles();
