@@ -4,11 +4,11 @@
       <img class="artileImage" [src]="article.urlToImage" alt="article-image"/>
       <div [innerHtml]="article.long_description"></div>
       <p>
-        <a [href]="article.url">{{ article.author }} - {{ article.publishedAt }}</a>
+        <a [href]="article.url">{{ article.author }} - {{ article.publishedAt | date }}</a>
       </p>
   </div>
 </div>
 
 <ng-template #error>
-  <p>Article Not Found :(</p>
+  <p>Select an article on the left</p>
 </ng-template>

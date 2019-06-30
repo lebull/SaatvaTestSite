@@ -16,7 +16,6 @@ export class ArticleViewerComponent implements OnInit {
   public articles: Article[];
   public selectedArticleUrl: string
   public currentArticle: Article;
-  public articleActive: boolean;
 
   public sidenavOpen: boolean = false;
 
@@ -25,27 +24,19 @@ export class ArticleViewerComponent implements OnInit {
     public articleService: ArticleService,
   ) {}
 
-  //TODO: Test
   ngOnInit() {
 
+    //Handle route param changes
     this.route.params.subscribe(params => {
-
-      //If the article params are empty, then we aren't looking at an article.
-      //this.currentArticleUrl could be tested directly in the xml, but I feel that would be unreadable.
-      this.articleActive = (params.id !== undefined);
-
-      //Curent article id
       this.selectedArticleUrl = params.id;
-
       this.updateCurrentArticle();
     });
 
-    this.articleService.getArticles().subscribe(
-      result => {
-        this.articles = result;
-        this.updateCurrentArticle();
-      }
-    );
+    //Handle articles retrieved
+    this.articleService.getArticles().subscribe(result => {
+      this.articles = result;
+      this.updateCurrentArticle();
+    });
 
     this.articleService.fetchArticles();
   }
