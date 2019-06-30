@@ -27,7 +27,7 @@ export class ArticleListComponent implements OnInit {
 
     let conditionalStyle = {}
 
-    if(this.selectedArticleUrl === article.url){
+    //if(this.selectedArticleUrl === article.url){
 
       //https://css-tricks.com/tinted-images-multiple-backgrounds/
       //This needs to get refactored, ideally to boot it out of the controller.
@@ -39,7 +39,7 @@ export class ArticleListComponent implements OnInit {
             ),
             url('${article.urlToImage}')`,
       };
-    }
+    //}
 
     return conditionalStyle;
   }

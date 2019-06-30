@@ -30,12 +30,12 @@ describe('ArticleListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should return a background style conditionally for active links', ()=>{
+  it('should return a background style for all links', ()=>{
     
     let dummyArticle = new Article("author", "title", "description", "long_description", "url", "urlToImage", new Date())
 
-    component.selectedArticleUrl = null;
-    expect(Object.keys(component.getBackgroundStyle(dummyArticle)).length).toBe(0)
+    // component.selectedArticleUrl = null;
+    // expect(Object.keys(component.getBackgroundStyle(dummyArticle)).length).toBe(0)
 
     component.selectedArticleUrl = "url";
     expect(Object.keys(component.getBackgroundStyle(dummyArticle)).length).toBeGreaterThan(0);

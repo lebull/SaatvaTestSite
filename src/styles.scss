@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9f8;
-    color: #666;
-    font-size: 18pt;
-}
 
+$backgroundColor: #f8f9f8;
 $masterWidth: 300px;
 $masterPadding: 50px;
 $articleWidth: 600px;
 $mobileCutoff: $masterWidth + $articleWidth;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: $backgroundColor;
+    color: #666;
+    font-size: 18pt;
+}
