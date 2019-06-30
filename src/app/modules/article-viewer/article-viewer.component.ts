@@ -50,7 +50,6 @@ export class ArticleViewerComponent implements OnInit {
     this.articleService.fetchArticles();
   }
 
-  //TODO: Test
   public updateCurrentArticle(){
 
     //We can't do anything if we don't have our articles yet.
